@@ -8,7 +8,7 @@ Docker Swarm es la aproximación para Cluster Management de Docker, la cual se b
 
     _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default en el sistema donde fue creado. La respuesta de este comando será _docker swarm join_ a la par de un token, para que otro nodo pueda unirse al swarm.
 
-    ```ShellSession
+    ```sh
       	$ sudo docker swarm init
     ``` 
 
@@ -18,7 +18,7 @@ Docker Swarm es la aproximación para Cluster Management de Docker, la cual se b
  
    _docker swarm join_ permite a un nuevo sistema unirse a un Swarm; esta función requiere de un argumento, el cual es el token generado al inicializar el Swarm.
 
-    ```ShellSession
+    ```sh
   	  $ sudo docker swarm join \
   	     --token SWMTKN-1-51xcg7anx0in93l9363p00b2bokto41slp57hzckgx8qaebfdw-8yirvjqcprnr1qb7wi7f4onjj \
   	     172.22.40.131:2377
@@ -42,7 +42,7 @@ Docker Swarm es la aproximación para Cluster Management de Docker, la cual se b
 
 	    Para descargar una imagen solo se utiliza _docker pull_. El tag es opcional.
 
-	    ```ShellSession
+	    ```sh
 	      	$ sudo docker pull nginx
 	    ``` 
 	  #### Compilación de imágenes
@@ -51,7 +51,7 @@ Docker Swarm es la aproximación para Cluster Management de Docker, la cual se b
 
 	      Para crear una imagen propia, es necesario compilarla a través de un Dockerfile. Con la instrucción _build_ podemos compilar una imagen para agregarla a un repositorio propio.
 
-	      ```ShellSession
+	      ```sh
 	      	 $ sudo docker build -f /code/findmark/release/docker/Dockerfile .
 	      ``` 
 	  #### Tag de imágenes
@@ -60,7 +60,7 @@ Docker Swarm es la aproximación para Cluster Management de Docker, la cual se b
 
 	       Para que docker sea capaz de identificar y cargar una imagen creada, es necesario agregarles un _tag_.
 
-	       ```ShellSession
+	       ```sh
 	      	 $ sudo docker tag 8b64173df4d4 ferbueno/nginx
 	      ```
 
@@ -70,7 +70,7 @@ Docker Swarm es la aproximación para Cluster Management de Docker, la cual se b
 
 	       Una vez que se haya realizado el _tag_ de la imagen, se puede cargar a un repositorio. **Es importante** mencionar que para Docker Swarm este es un proceso necesario, para que todos los nodos puedan acceder a la misma imagen.
 
-	       	```ShellSession
+	       	```sh
 	      	 $ sudo docker push ferbueno/nginx
 	      ```
 
@@ -80,7 +80,7 @@ Docker Swarm es la aproximación para Cluster Management de Docker, la cual se b
 
 	    	Para conocer cuántas imágenes tiene disponible cada nodo.
 
-	    	```ShellSession
+	    	```sh
 	      	 $ sudo docker image ls
             ```
       #### Eliminar imagen
@@ -89,7 +89,7 @@ Docker Swarm es la aproximación para Cluster Management de Docker, la cual se b
 
         	Si hay que eliminar una imagen para que vuelva a ser descargada, o ya no es necesaria. Si la imagen es utilizada por uno o más contenedores, se deben detener los contenedores primero.
 
-        	```ShellSession
+        	```sh
 	      	 $ sudo docker rmi ferbueno/nginx
             ```
 
@@ -103,7 +103,7 @@ Docker Swarm es la aproximación para Cluster Management de Docker, la cual se b
 
       Crea un servicio basándose en la imagen que se manda como parámetro.
 
-      ```ShellSession
+      ```sh
 	       $ sudo docker create --name nginxService ferbueno/nginx
       ```
 
@@ -113,7 +113,7 @@ Docker Swarm es la aproximación para Cluster Management de Docker, la cual se b
 
       Enlista todos los servicios activos.
 
-       ```ShellSession
+       ```sh
 	       $ sudo docker service ls
       ```
 
@@ -123,7 +123,7 @@ Docker Swarm es la aproximación para Cluster Management de Docker, la cual se b
 
       Muestra los detalles del estado servicio específico elegido sobre el swarm.
 
-       ```ShellSession
+       ```sh
 	       $ sudo docker service ps nginx
       ```
 
@@ -133,7 +133,7 @@ Docker Swarm es la aproximación para Cluster Management de Docker, la cual se b
 
       Muestra a detalle el servicio.
 
-      ```ShellSession
+      ```sh
 	       $ sudo docker service inspect --pretty nginxService
       ```
 
@@ -156,13 +156,13 @@ Docker Swarm es la aproximación para Cluster Management de Docker, la cual se b
 
      Muestra la lista de los contenedores corriendo en el nodo del Swarm.
 
-      ```ShellSession
+      ```sh
 	       $ sudo docker container ls
       ```
 
      Muestra la lista de todos los contenedores del Swarm.
 
-      ```ShellSession
+      ```sh
 	       $ sudo docker container ls -a
       ```
 
@@ -172,7 +172,7 @@ Docker Swarm es la aproximación para Cluster Management de Docker, la cual se b
 
      Es posible inspeccionar los detalles de cada contenedor, aquí se pueden ver los detalles como la dirección IP del contenedor.
 
-      ```ShellSession
+      ```sh
 	       $ sudo docker container inspect 
       ```
      #### Obtener los logs del contenedor
@@ -181,7 +181,7 @@ Docker Swarm es la aproximación para Cluster Management de Docker, la cual se b
 
      Cuando se necesita saber que ocurre dentro del contenedor, es posible ver los logs del mismo, para verificar que los procesos de terminal se ejecuten de manera correcta.
 
-      ```ShellSession
+      ```sh
 	       $ sudo docker container logs  80645a00ccff
       ```   
 
@@ -191,7 +191,7 @@ Docker Swarm es la aproximación para Cluster Management de Docker, la cual se b
 
      De ser necesario, es posible correr comandos de terminal sobre un contenedor específico, para probar diferentes aspectos del mismo, del servicio o de la imagen que está corriendo dentro.
 
-      ```ShellSession
+      ```sh
 	       $ sudo docker container exec  80645a00ccff echo "Hello World!"
       ```
 
