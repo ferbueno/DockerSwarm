@@ -8,9 +8,9 @@ Docker Swarm es la aproximación para Cluster Management de Docker, la cual se b
 
     _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default en el sistema donde fue creado. La respuesta de este comando será _docker swarm join_ a la par de un token, para que otro nodo pueda unirse al swarm.
 
-    ``` 
-      	$ sudo docker swarm init
-    ``` 
+    ```
+	 $ sudo docker swarm init
+	```
 
 ### Unirse a un Swarm
  
