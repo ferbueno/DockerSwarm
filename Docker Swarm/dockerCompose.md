@@ -16,6 +16,7 @@
   ```
   $ sudo docker stack deploy -c docker-compose.yml helloWorld
   ```
+  Existe una opción llamada _--with-registry-auth_, que permite a los nodos acceder a las imágenes remotas. Al trabajar con Swarm, debe ser habilitada.
 
   ### Listar las pilas
 
