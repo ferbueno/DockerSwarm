@@ -54,5 +54,31 @@
   ```
   version: '3'
   ```
-
   
+  Después, entra la declaración de servicios que serán desplegados con la pila, iniciando la declaración con el tag _services_.
+  Debajo del tag services, se declararán los nombres de cada servicio que será desplegado:
+
+  ```
+  services:
+     service1:
+     service2:
+     service3:
+  ```
+  Dentro de cada servicio, se declararán las opciones específicas de ese servicio; como lo son la imagen del servicio, los puertos del servicio, los volúmenes del servicio y el ambiente del servicio entre otras cosas:
+
+  ```
+  services:
+    db:
+      image: mysql:5.7
+      restart: always
+      ports:
+        - "4306:3306"
+      volumes:
+        - db_data:/var/lib/mysql
+      environment:
+        MYSQL_ROOT_PASSWORD: root_password
+        MYSQL_DATABASE: database
+        MYSQL_USER: user
+        MYSQL_PASSWORD: password
+  ```
+
