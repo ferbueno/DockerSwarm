@@ -38,7 +38,7 @@ _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default 
 
   #### Descarga de imágenes
 
-  **docker pull <IMAGE>:<TAG>**
+  **docker pull [IMAGE]:[TAG]**
 
   Para descargar una imagen solo se utiliza _docker pull_. El tag es opcional.
 
@@ -66,32 +66,32 @@ _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default 
 
   #### Carga de imágenes al repositorio
 
-    **docker push [IMAGE]**
+  **docker push [IMAGE]**
 
-    Una vez que se haya realizado el _tag_ de la imagen, se puede cargar a un repositorio. **Es importante** mencionar que para Docker Swarm este es un proceso necesario, para que todos los nodos puedan acceder a la misma imagen.
+  Una vez que se haya realizado el _tag_ de la imagen, se puede cargar a un repositorio. **Es importante** mencionar que para Docker Swarm este es un proceso necesario, para que todos los nodos puedan acceder a la misma imagen.
 
-    ``` 
-    $ sudo docker push ferbueno/nginx
-    ```
+  ``` 
+  $ sudo docker push ferbueno/nginx
+  ```
 
   #### Lista de imágenes descargdas
 
-    **docker image ls**
+  **docker image ls**
 
-    Para conocer cuántas imágenes tiene disponible cada nodo.
+  Para conocer cuántas imágenes tiene disponible cada nodo.
 
-    ``` 
-    $ sudo docker image ls
-    ```
+  ``` 
+  $ sudo docker image ls
+  ```
   #### Eliminar imagen
 
-    **docker rmi <IMAGE>**
+  **docker rmi [IMAGE]**
 
-    	Si hay que eliminar una imagen para que vuelva a ser descargada, o ya no es necesaria. Si la imagen es utilizada por uno o más contenedores, se deben detener los contenedores primero.
+  Si hay que eliminar una imagen para que vuelva a ser descargada, o ya no es necesaria. Si la imagen es utilizada por uno o más contenedores, se deben detener los contenedores primero.
 
-    	``` 
-      	 $ sudo docker rmi ferbueno/nginx
-        ```
+  ``` 
+  $ sudo docker rmi ferbueno/nginx
+  ```
 
  ### Servicios
 
