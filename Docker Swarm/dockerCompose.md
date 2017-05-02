@@ -51,14 +51,14 @@
 
   Todos los archivos _YAML_ de configuración de pila deben iniciar con la versión, la cual actualmente es 3, en formato _String_:
 
-  ```
+  ```yml
   version: '3'
   ```
   
   Después, entra la declaración de servicios que serán desplegados con la pila, iniciando la declaración con el tag _services_.
   Debajo del tag services, se declararán los nombres de cada servicio que será desplegado:
 
-  ```
+  ```yml
   services:
      service1:
      service2:
@@ -66,7 +66,7 @@
   ```
   Dentro de cada servicio, se declararán las opciones específicas de ese servicio; como lo son la imagen del servicio, los puertos del servicio, los volúmenes del servicio y el ambiente del servicio entre otras cosas:
 
-  ```
+  ```yml
   services:
     db:
       image: mysql:5.7
