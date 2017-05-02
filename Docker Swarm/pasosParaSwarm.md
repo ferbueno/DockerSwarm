@@ -27,7 +27,7 @@
  ```
  ### 6. Crear el archivo docker-compose.yml
 
- Para consultar un ejemplo, da click [aquí] (docker-compose/docker-compose.yml)
+ Para consultar un ejemplo, da click [aquí](docker-compose/docker-compose.yml)
 
  ### 7. Compilar la pila desde el archivo YAML
 
