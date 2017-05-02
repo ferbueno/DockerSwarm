@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+   messager:
+     depends_on:
+       - rabbitmq
+     build:
+       context: ../../
+       dockerfile: release/docker/messager/Dockerfile
+     image: ferbueno/rabbit-messager
+     ports:
+       - "8080:8080"
+     volumes:
+       - /mq/rabbitmq/src/rabbitmq:/usr/local/tomcat/webapps/rabbitmq:rw
+       - /mq/rabbitmq/release/data:/data:rw
+       - /gradle:/gradle
+   rabbitmq:
+     build:
+       context: ../../
+       dockerfile: release/docker/rabbitmq/Dockerfile
+     image: ferbueno/rabbitmq
+     ports:
+       - "80:80"
+   nginx:
+     image: nginx
+     deploy:
+       placement:
+           constraints: [node.role == manager]

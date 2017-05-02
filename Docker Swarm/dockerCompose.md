@@ -47,7 +47,7 @@
 
   ## docker-compose.yml
 
-  Como se mencionó arriba, un archivo _YAML_ de configuración es necesario para poder desplegar servicios en pilas a Docker Swarm. Para ver un ejemplo de este archivo, da click aquí.
+  Como se mencionó arriba, un archivo _YAML_ de configuración es necesario para poder desplegar servicios en pilas a Docker Swarm. Para ver un ejemplo de este archivo, da click [aquí](docker-compose/docker-compose.yml).
 
   Todos los archivos _YAML_ de configuración de pila deben iniciar con la versión, la cual actualmente es 3, en formato _String_:
 
