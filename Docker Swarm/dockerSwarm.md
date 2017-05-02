@@ -18,11 +18,11 @@ Docker Swarm es la aproximación para Cluster Management de Docker, la cual se b
  
    _docker swarm join_ permite a un nuevo sistema unirse a un Swarm; esta función requiere de un argumento, el cual es el token generado al inicializar el Swarm.
 
-    ``` 
+   ``` 
   	  $ sudo docker swarm join \
   	     --token SWMTKN-1-51xcg7anx0in93l9363p00b2bokto41slp57hzckgx8qaebfdw-8yirvjqcprnr1qb7wi7f4onjj \
   	     172.22.40.131:2377
-    ```
+   ```
 
  ### Imágenes
 
