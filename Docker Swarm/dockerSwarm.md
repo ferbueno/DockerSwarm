@@ -47,26 +47,26 @@ _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default 
    ``` 
   #### Compilación de imágenes
 
-  **docker build -f <PATH TO DOCKERFILE> .**
+  **docker build -f [PATH TO DOCKERFILE] .**
 
    Para crear una imagen propia, es necesario compilarla a través de un Dockerfile. Con la instrucción _build_ podemos compilar una imagen para agregarla a un repositorio propio.
 
-    ``` 
-    $ sudo docker build -f /code/findmark/release/docker/Dockerfile .
-    ``` 
+   ``` 
+   $ sudo docker build -f /code/findmark/release/docker/Dockerfile .
+   ``` 
   #### Tag de imágenes
 
-  **docker tag <IMAGE ID> <TAG>**
+  **docker tag [IMAGE ID] [TAG]**
 
    Para que docker sea capaz de identificar y cargar una imagen creada, es necesario agregarles un _tag_.
 
-    ``` 
-    $ sudo docker tag 8b64173df4d4 ferbueno/nginx
-    ```
+   ``` 
+   $ sudo docker tag 8b64173df4d4 ferbueno/nginx
+   ```
 
   #### Carga de imágenes al repositorio
 
-    **docker push <IMAGE>
+    **docker push [IMAGE]**
 
     Una vez que se haya realizado el _tag_ de la imagen, se puede cargar a un repositorio. **Es importante** mencionar que para Docker Swarm este es un proceso necesario, para que todos los nodos puedan acceder a la misma imagen.
 
