@@ -147,51 +147,51 @@ Elimina el servicio especificado de la lista de servicios.
 
  ## Contenedores
 
-     Los contenedores correrán las tareas que el servicio les asigne. Se creará un contenedor por cada réplica de cada servicio que exista.
+Los contenedores correrán las tareas que el servicio les asigne. Se creará un contenedor por cada réplica de cada servicio que exista.
 
 
-     ### Enlistar los contenedores
+### Enlistar los contenedores
 
-     **docker container ls**
+**docker container ls**
 
-     Muestra la lista de los contenedores corriendo en el nodo del Swarm.
+Muestra la lista de los contenedores corriendo en el nodo del Swarm.
 
-      ``` 
-	       $ sudo docker container ls
-      ```
+``` 
+$ sudo docker container ls
+```
 
-     Muestra la lista de todos los contenedores del Swarm.
+Muestra la lista de todos los contenedores del Swarm.
 
-      ``` 
-	       $ sudo docker container ls -a
-      ```
+``` 
+$ sudo docker container ls -a
+```
 
-     ### Inspeccionar los contenedores
+### Inspeccionar los contenedores
 
-     **docker container inspect <CONTAINER ID>
+**docker container inspect [CONTAINER ID]**
 
-     Es posible inspeccionar los detalles de cada contenedor, aquí se pueden ver los detalles como la dirección IP del contenedor.
+Es posible inspeccionar los detalles de cada contenedor, aquí se pueden ver los detalles como la dirección IP del contenedor.
 
-      ``` 
-	       $ sudo docker container inspect 
-      ```
-     ### Obtener los logs del contenedor
+``` 
+$ sudo docker container inspect 
+```
+### Obtener los logs del contenedor
 
-     **docker container logs <CONTAINER ID>**
+**docker container logs [CONTAINER ID]**
 
-     Cuando se necesita saber que ocurre dentro del contenedor, es posible ver los logs del mismo, para verificar que los procesos de terminal se ejecuten de manera correcta.
+Cuando se necesita saber que ocurre dentro del contenedor, es posible ver los logs del mismo, para verificar que los procesos de terminal se ejecuten de manera correcta.
 
-      ``` 
-	       $ sudo docker container logs  80645a00ccff
-      ```   
+``` 
+$ sudo docker container logs  80645a00ccff
+```   
 
-     ### Correr instrucciones de terminal en un contenedor
+### Correr instrucciones de terminal en un contenedor
 
-     **docker container exec <CONTAINER ID> <BASH COMMAND>** 
+**docker container exec [CONTAINER ID] [BASH COMMAND]** 
 
-     De ser necesario, es posible correr comandos de terminal sobre un contenedor específico, para probar diferentes aspectos del mismo, del servicio o de la imagen que está corriendo dentro.
+De ser necesario, es posible correr comandos de terminal sobre un contenedor específico, para probar diferentes aspectos del mismo, del servicio o de la imagen que está corriendo dentro.
 
-      ``` 
-	       $ sudo docker container exec  80645a00ccff echo "Hello World!"
-      ```
+``` 
+$ sudo docker container exec  80645a00ccff echo "Hello World!"
+```
 
