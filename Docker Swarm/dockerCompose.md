@@ -26,3 +26,33 @@
   ```
   $ sudo docker stack ls
   ```
+  ### Listar los servicios de las pilas
+
+  **docker stack services**
+
+  Si un desarrollador quisiera ver los servicios que fueron desplegados con la pila, debe usar esta instrucción. 
+
+  ```
+  $ sudo docker stack services
+  ```
+  ### Eliminar una pila
+
+  **docker stack rm [STACK]**
+
+  Esta instrucción elimina la pila indicada.
+
+  ```
+  $ sudo docker stack rm helloWorld
+  ```
+
+  ## docker-compose.yml
+
+  Como se mencionó arriba, un archivo _YAML_ de configuración es necesario para poder desplegar servicios en pilas a Docker Swarm. Para ver un ejemplo de este archivo, da click aquí.
+
+  Todos los archivos _YAML_ de configuración de pila deben iniciar con la versión, la cual actualmente es 3, en formato _String_:
+
+  ```
+  version: '3'
+  ```
+
+  

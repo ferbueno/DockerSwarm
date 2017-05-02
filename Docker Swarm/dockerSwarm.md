@@ -74,7 +74,7 @@ _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default 
   $ sudo docker push ferbueno/nginx
   ```
 
-  ### Lista de imágenes descargdas
+  ### Lista de imágenes descargadas
 
   **docker image ls**
 
@@ -117,7 +117,7 @@ Enlista todos los servicios activos.
 $ sudo docker service ls
 ```
 
-### Detalles de un servicio
+### Detalles de tareas de un servicio
 
 **docker service ps [SERVICE]**
 
