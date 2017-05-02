@@ -2,7 +2,7 @@
 
 Docker Swarm es la aproximación para Cluster Management de Docker, la cual se basa en nodos maestros y nodos trabajadores. Los nodos maestros (o managers) tienen asignan trabajo a los nodos trabajadores y a ellos mismos, además de tener la jerarquía necesaria para realizar operaciones en el swarm.
 
-### Inicialización de Swarm
+## Inicialización de Swarm
 
  **docker swarm init**
 
@@ -12,7 +12,7 @@ _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default 
  $ sudo docker swarm init
 ```
 
-### Unirse a un Swarm
+## Unirse a un Swarm
  
  **docker swarm join [TOKEN] [HOST]**
  
@@ -24,19 +24,19 @@ _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default 
   	     172.22.40.131:2377
    ```
 
- ### Imágenes
+ ## Imágenes
 
    En Docker Swarm los contenedores y servicios se rigen por imágenes, que tanto pueden estar guardadas en el repositorio de Docker (librería Docker), en un repositorio local creado por el Swarm, o en un repositorio propio de Docker.
 
-  #### Tags
+  ### Tags
 
   Una imagen tiene asociada un _tag_, que normalmente se refiere a la versión de la imagen. Al manipular imágenes sin tag, por default se establece el tag _latest_.
 
-  #### Digests
+  ### Digests
 
   El _digest_ es un hash asignado a una imagen que tiene un tag y pertenece a un repositorio, es necesario que una imagen tenga un digest asignado para que se pueda asignar a servicios.
 
-  #### Descarga de imágenes
+  ### Descarga de imágenes
 
   **docker pull [IMAGE]:[TAG]**
 
@@ -45,7 +45,7 @@ _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default 
    ``` 
     $ sudo docker pull nginx
    ``` 
-  #### Compilación de imágenes
+  ### Compilación de imágenes
 
   **docker build -f [PATH TO DOCKERFILE] .**
 
@@ -54,7 +54,7 @@ _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default 
    ``` 
    $ sudo docker build -f /code/findmark/release/docker/Dockerfile .
    ``` 
-  #### Tag de imágenes
+  ### Tag de imágenes
 
   **docker tag [IMAGE ID] [TAG]**
 
@@ -64,7 +64,7 @@ _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default 
    $ sudo docker tag 8b64173df4d4 ferbueno/nginx
    ```
 
-  #### Carga de imágenes al repositorio
+  ### Carga de imágenes al repositorio
 
   **docker push [IMAGE]**
 
@@ -74,7 +74,7 @@ _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default 
   $ sudo docker push ferbueno/nginx
   ```
 
-  #### Lista de imágenes descargdas
+  ### Lista de imágenes descargdas
 
   **docker image ls**
 
@@ -83,7 +83,7 @@ _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default 
   ``` 
   $ sudo docker image ls
   ```
-  #### Eliminar imagen
+  ### Eliminar imagen
 
   **docker rmi [IMAGE]**
 
@@ -93,21 +93,21 @@ _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default 
   $ sudo docker rmi ferbueno/nginx
   ```
 
- ### Servicios
+ ## Servicios
 
- 	Los servicios correrán interpretarán las tareas que deben realizarse. Un servicio se puede replicar para correr en varios contenedores encargados de correr la tarea asignada por el servicio. Se pueden replicar y escalar lor servicios.
+   Los servicios correrán interpretarán las tareas que deben realizarse. Un servicio se puede replicar para correr en varios contenedores encargados de correr la tarea asignada por el servicio. Se pueden replicar y escalar lor servicios.
 
-    #### Crear un servicio
+   ### Crear un servicio
 
-      **docker service create _OPTIONS_ <IMAGE>**
+    **docker service create _OPTIONS_ <IMAGE>**
 
-      Crea un servicio basándose en la imagen que se manda como parámetro.
+    Crea un servicio basándose en la imagen que se manda como parámetro.
+ 
+    ``` 
+	$ sudo docker create --name nginxService ferbueno/nginx
+    ```
 
-      ``` 
-	       $ sudo docker create --name nginxService ferbueno/nginx
-      ```
-
-    #### Enlistar un servicio
+    ### Enlistar un servicio
 
       **docker service ls**
 
@@ -117,7 +117,7 @@ _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default 
 	       $ sudo docker service ls
       ```
 
-    #### Detalles de un servicio
+    ### Detalles de un servicio
 
       **docker service ps <SERVICE>**
 
@@ -127,7 +127,7 @@ _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default 
 	       $ sudo docker service ps nginx
       ```
 
-    #### Inspeccionar un servicio
+    ### Inspeccionar un servicio
 
       **docker service inspect <SERVICE>**
 
@@ -139,18 +139,18 @@ _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default 
 
       _Para una inspección más profunda, es necesario quitar la bandera '--pretty'_
 
-    #### Eliminar un servicio
+    ### Eliminar un servicio
 
       **docker service rm <SERVICE>**
 
       Elimina el servicio especificado de la lista de servicios.
 
- ### Contenedores
+ ## Contenedores
 
      Los contenedores correrán las tareas que el servicio les asigne. Se creará un contenedor por cada réplica de cada servicio que exista.
 
 
-     #### Enlistar los contenedores
+     ### Enlistar los contenedores
 
      **docker container ls**
 
@@ -166,7 +166,7 @@ _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default 
 	       $ sudo docker container ls -a
       ```
 
-     #### Inspeccionar los contenedores
+     ### Inspeccionar los contenedores
 
      **docker container inspect <CONTAINER ID>
 
@@ -175,7 +175,7 @@ _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default 
       ``` 
 	       $ sudo docker container inspect 
       ```
-     #### Obtener los logs del contenedor
+     ### Obtener los logs del contenedor
 
      **docker container logs <CONTAINER ID>**
 
@@ -185,7 +185,7 @@ _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default 
 	       $ sudo docker container logs  80645a00ccff
       ```   
 
-     #### Correr instrucciones de terminal en un contenedor
+     ### Correr instrucciones de terminal en un contenedor
 
      **docker container exec <CONTAINER ID> <BASH COMMAND>** 
 
