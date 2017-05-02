@@ -101,7 +101,7 @@ Los servicios correrán interpretarán las tareas que deben realizarse. Un servi
 
 **docker service create [OPTIONS] [IMAGE]**
 
-Crea un servicio basándose en la imagen que se manda como parámetro.
+Crea un servicio basándose en la imagen que se manda como parámetro. Un servicio se creará sobre el nodo que determine el nodo maestro, que dependerá de la disponibilidad de los nodos del Swarm.
 
 ``` 
 $ sudo docker create --name nginxService ferbueno/nginx
