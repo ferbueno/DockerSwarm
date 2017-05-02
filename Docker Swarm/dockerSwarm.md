@@ -173,7 +173,7 @@ $ sudo docker container ls -a
 Es posible inspeccionar los detalles de cada contenedor, aquí se pueden ver los detalles como la dirección IP del contenedor.
 
 ``` 
-$ sudo docker container inspect 
+$ sudo docker container inspect 80645a00ccff
 ```
 ### Obtener los logs del contenedor
 
