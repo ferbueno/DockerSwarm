@@ -95,55 +95,55 @@ _docker swarm init_ inicializa un Docker Swarm, con el nodo maestro por default 
 
  ## Servicios
 
-   Los servicios correrán interpretarán las tareas que deben realizarse. Un servicio se puede replicar para correr en varios contenedores encargados de correr la tarea asignada por el servicio. Se pueden replicar y escalar lor servicios.
+Los servicios correrán interpretarán las tareas que deben realizarse. Un servicio se puede replicar para correr en varios contenedores encargados de correr la tarea asignada por el servicio. Se pueden replicar y escalar lor servicios.
 
-   ### Crear un servicio
+### Crear un servicio
 
-    **docker service create _OPTIONS_ <IMAGE>**
+**docker service create [OPTIONS] [IMAGE]**
 
-    Crea un servicio basándose en la imagen que se manda como parámetro.
- 
-    ``` 
-	$ sudo docker create --name nginxService ferbueno/nginx
-    ```
+Crea un servicio basándose en la imagen que se manda como parámetro.
 
-    ### Enlistar un servicio
+``` 
+$ sudo docker create --name nginxService ferbueno/nginx
+```
 
-      **docker service ls**
+### Enlistar un servicio
 
-      Enlista todos los servicios activos.
+**docker service ls**
 
-       ``` 
-	       $ sudo docker service ls
-      ```
+Enlista todos los servicios activos.
 
-    ### Detalles de un servicio
+``` 
+$ sudo docker service ls
+```
 
-      **docker service ps <SERVICE>**
+### Detalles de un servicio
 
-      Muestra los detalles del estado servicio específico elegido sobre el swarm.
+**docker service ps [SERVICE]**
 
-       ``` 
-	       $ sudo docker service ps nginx
-      ```
+Muestra los detalles del estado servicio específico elegido sobre el swarm.
 
-    ### Inspeccionar un servicio
+``` 
+$ sudo docker service ps nginx
+```
 
-      **docker service inspect <SERVICE>**
+### Inspeccionar un servicio
 
-      Muestra a detalle el servicio.
+**docker service inspect [SERVICE]**
 
-      ``` 
-	       $ sudo docker service inspect --pretty nginxService
-      ```
+Muestra a detalle el servicio.
 
-      _Para una inspección más profunda, es necesario quitar la bandera '--pretty'_
+``` 
+$ sudo docker service inspect --pretty nginxService
+```
 
-    ### Eliminar un servicio
+_Para una inspección más profunda, es necesario quitar la bandera '--pretty'_
 
-      **docker service rm <SERVICE>**
+### Eliminar un servicio
 
-      Elimina el servicio especificado de la lista de servicios.
+**docker service rm [SERVICE]**
+
+Elimina el servicio especificado de la lista de servicios.
 
  ## Contenedores
 
